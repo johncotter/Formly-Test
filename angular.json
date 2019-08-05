@@ -80,7 +80,7 @@
               "apps/formtest/tsconfig.app.json",
               "apps/formtest/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": ["**/node_modules/**", "!apps/formtest/**"]
           }
         },
         "test": {
@@ -114,7 +114,10 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "apps/formtest-e2e/tsconfig.e2e.json"
+            "tsConfig": "apps/formtest-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "!apps/formtest-e2e/**"
+            ]
           }
         }
       }
