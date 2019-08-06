@@ -1,0 +1,4 @@
+<ul>
+  <li *ngFor="let name of this.formControl.value">{{name}} <button (click)="removeName(name)">X</button></li>
+</ul>
+<input type="text" #newName /> <button (click)="addName(newName.value)">Add Name</button>

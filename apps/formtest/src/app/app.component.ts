@@ -10,7 +10,7 @@ import {FormlyFieldConfig} from '@ngx-formly/core';
 export class AppComponent {
   title = 'formtest';
   form = new FormGroup({});
-  model = { email: 'email@gmail.com' };
+  model = { email: 'email@gmail.com', customComponentExtends: ['Abe2', 'Gabe2', 'Dave2'], customComponent: ['Abe', 'Gabe', 'Dave'],  customInput: 'me me me'};
   fields: FormlyFieldConfig[] = [{
     key: 'email',
     type: 'input',
@@ -19,6 +19,25 @@ export class AppComponent {
       placeholder: 'Enter email',
       required: true,
     }
+  },{
+    key: 'customInput',
+    type: 'custom-input',
+    templateOptions: {
+      label: 'Custom Input',
+      placeholder: 'Formly is terrific!',
+    },
+  },{
+    key: 'customComponent',
+    type: 'custom-component',
+    templateOptions: {
+      label: 'Custom Componet'
+    },
+  },{
+    key: 'customComponentExtends',
+    type: 'custom-component-cva',
+    templateOptions: {
+      label: 'Custom Componet Extended'
+    },
   }];
 
   submit(model) {
